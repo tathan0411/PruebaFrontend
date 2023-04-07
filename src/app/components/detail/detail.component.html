@@ -1,1 +1,24 @@
-<p>detail works!</p>
+<div class="mat-dialog-actions" align="end">
+  <button mat-button color="warn" (click)="close()">
+    Close
+  </button>
+</div>
+<div class="scroll">
+  <div *ngFor="let hero of heroes">
+    <div class="card" id="hero">
+      <div class="card-image">
+        <img [src]="hero.thumbnail.path+'.'+hero.thumbnail.extension" />
+      </div>
+      <div class="card-text">
+        <div>
+          <div>
+            <h2>{{hero.name}}</h2>
+            <span *ngIf="hero.description!=''">{{hero.description}}</span>
+            <span *ngIf="hero.description==''">No description found</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p>
+  </div>
+</div>

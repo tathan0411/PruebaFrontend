@@ -15,6 +15,34 @@ import { DetailComponent } from './components/detail/detail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatRippleModule } from '@angular/material/core';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  NgxUiLoaderModule,
+  NgxUiLoaderConfig,
+  SPINNER,
+  POSITION,
+  PB_DIRECTION,
+  NgxUiLoaderHttpModule,
+} from "ngx-ui-loader";
+
+const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+  bgsColor: "#EC1D24",
+  bgsOpacity: 0.4,
+  blur: 1,
+  overlayColor: "rgba(150, 150, 150, .3)",
+  bgsPosition: POSITION.bottomCenter,
+  bgsSize: 40,
+  bgsType: SPINNER.rectangleBounce, // background spinner type
+  fgsType: SPINNER.squareJellyBox, // foreground spinner type
+  fgsPosition: POSITION.bottomRight,
+  fgsColor: "#EC1D24",
+  pbDirection: PB_DIRECTION.leftToRight, // progress bar direction
+  pbThickness: 5, // progress bar thickness
+  pbColor: "#EC1D24"
+};
 
 @NgModule({
   declarations: [
@@ -34,9 +62,26 @@ import { MatDividerModule } from '@angular/material/divider';
     MatInputModule,
     MatCardModule,
     MatDividerModule,
+    MatRippleModule,
+    MatDialogModule,
+    ReactiveFormsModule,
+    FormsModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MatDialogRef,
+      useValue: {},
+    },
+    {
+      provide: MAT_DIALOG_DATA,
+      useValue: {},
+    },
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

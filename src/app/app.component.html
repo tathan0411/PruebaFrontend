@@ -1,13 +1,7 @@
-<p>
-  <mat-toolbar color="primary">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>MARVEL</span>
-    <span class="example-spacer"></span>
-  </mat-toolbar>
-</p>
-
+<ngx-ui-loader></ngx-ui-loader>
+<div class="header">
+  <button type="button" mat-flat-button (click)="return()"><img class="image" src="../assets/logo.png"></button>
+</div>
 <div class="center">
   <app-search></app-search>
   <app-results></app-results>

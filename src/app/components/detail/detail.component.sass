@@ -1,0 +1,71 @@
+.image
+	width: 80px
+	height: 80px
+	border-radius: 50%
+	left: 0px
+
+*
+	margin: 0
+	padding: 0
+	font-family: 'Raleway', serif
+	&::-webkit-scrollbar
+		width: 12px
+	&::-webkit-scrollbar-track
+		background: #FFFFFF
+	&::-webkit-scrollbar-thumb
+		background-color: #EC1D24
+		border-radius: 20px
+		border: 3px solid #EC1D24
+
+.card
+	margin: 0 30px
+	height: 300px
+	width: 250px
+	background-color: #fff
+.card-image
+	position: relative
+	width: 250px
+	height: auto
+	border-bottom: 5px solid #000
+	z-index: 1
+	& > img
+		position: absolute
+		z-index: 2
+		height: 100%
+
+#hero
+	h2
+		font-size: 2rem
+		color: #EC1D24
+	& > .card-image
+		height: 80%
+		border-radius: 50%
+		background-color: #EC1D24
+		& > img
+			border-radius: 50%
+			width: 80%
+			height: auto
+			margin-top: 20px
+			margin-left: 10%
+	& > .card-text
+		& > div
+			display: flex
+			padding: 10px
+			padding-top: 5px
+			& > div
+				&:first-child
+					display: flex
+					flex-direction: column
+					& > span
+						line-height: 30px
+						font-weight: 5vw
+				&:last-child
+					display: flex
+					& > span
+						&:first-child
+							font-size: 2rem
+							font-weight: 5vw
+							line-height: 60px
+						&:last-child
+							font-weight: 5vw
+							font-size: 1.3rem

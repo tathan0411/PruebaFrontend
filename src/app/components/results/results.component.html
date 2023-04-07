@@ -1,9 +1,18 @@
 <div *ngFor="let hero of heroes">
-  <mat-card>
-    <mat-card-content>
-      <img class="image" [src]="hero.thumbnail.path+'.'+hero.thumbnail.extension">
-      <mat-card-title>{{hero.name}}</mat-card-title>
-    </mat-card-content>
-  </mat-card>
-  <p>
+
+  <div class="card" id="hero">
+    <div class="card-image">
+      <img [src]="hero.thumbnail.path+'.'+hero.thumbnail.extension" />
+    </div>
+    <div class="card-text">
+      <div>
+        <div>
+          <span (click)="viewDetail(hero.id)">{{hero.name}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
 </div>
+
+<div *ngIf="heroes != undefined && heroes.length == 0" class="notfound">NO HEROES FOUND</div>

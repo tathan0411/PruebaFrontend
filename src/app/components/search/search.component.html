@@ -1,7 +1,7 @@
-<form>
+<form (ngSubmit)="send()" [formGroup]="form">
   <mat-form-field class="example-full-width">
     <mat-label>Search</mat-label>
-    <input matInput placeholder="Search">
+    <input matInput placeholder="Search" id="search" formControlName="search">
     <mat-icon matSuffix>search</mat-icon>
   </mat-form-field>
 </form>

@@ -3,3 +3,80 @@
 	height: 80px
 	border-radius: 50%
 	left: 0px
+
+.notfound
+	display: grid
+	place-items: center
+	width: 100%
+	height: 100vh
+	left: 10%
+	background-color: grey
+	font-size: 8vw
+
+*
+	margin: 0
+	padding: 0
+	font-family: 'Raleway', serif
+h2
+	font-family: 'Open Sans Condensed', sans-serif
+	font-size: 4rem
+#container
+	height: 100vh
+	width: 100vw
+	background-color: #F2EBDD
+	display: flex
+	align-items: center
+	justify-content: center
+.card
+	margin: 0 30px
+	height: 300px
+	width: 250px
+	background-color: #fff
+	border-radius: 25px
+	border: 5px solid black
+	box-shadow: 0 0 0 7px #fff,0 0  8px 5px #000
+.card-image
+	position: relative
+	width: 100%
+	border-bottom: 5px solid #000
+	z-index: 1
+	& > img
+		position: absolute
+		z-index: 2
+		height: 100%
+
+#hero
+	& > .card-image
+		height: 80%
+		border-radius: 20px 20px 0px 0px
+		background-color: #EC1D24
+		& > img
+			width: 80%
+			height: auto
+			margin-top: 20px
+			margin-left: 10%
+	& > .card-text
+		& > div
+			display: flex
+			justify-content: space-between
+			padding: 10px
+			padding-top: 5px
+			& > div
+				&:first-child
+					display: flex
+					flex-direction: column
+					& > span
+						font-size: 1.5rem
+						line-height: 30px
+						font-weight: 8vw
+						cursor: pointer
+				&:last-child
+					display: flex
+					& > span
+						&:first-child
+							font-size: 5rem
+							font-weight: 800
+							line-height: 60px
+						&:last-child
+							font-weight: 600
+							font-size: 1.3rem

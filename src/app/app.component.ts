@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { UtilitiesService } from './utilities/utilities.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'prueba';
+  constructor(private _utilitiesService: UtilitiesService) { }
+
+  return() {
+    this._utilitiesService.setSearch('');
+  }
 }
